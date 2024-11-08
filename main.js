@@ -16,7 +16,7 @@ Read the terminal output before and after to see the difference
 
 export function start() {
   //your code here
-  // return true
+
 };
 
 /******************************************************************************
@@ -31,8 +31,13 @@ received is an even number.
 HINT: Use the modulo operator (%) Google it! 😊
 ******************************************************************************/
 
-export const oddOrEven = () => {
-  //your code here
+export const oddOrEven = (num) => {
+  if (num % 2 === 0) {
+    return "Even"
+} else {
+  return "Odd"
+}
+
 };
 
 /******************************************************************************
@@ -47,8 +52,10 @@ Example: "This is cool" should return "THIS IS COOL!"
 
 ******************************************************************************/
 
-export function makeMeLoud() {
-  //your code here
+export function makeMeLoud(string) {
+  const result = string.toUpperCase()+"!"
+  return result
+
 }
 
 /******************************************************************************
@@ -72,8 +79,18 @@ The function should return:
 
 ******************************************************************************/
 
-export const greeter = () => {
-  //your code here
+export const greeter = (fName, hour) => {
+  if (hour < 0 || hour > 23) {
+    return "Invalid time";
+} else if (hour >= 0 && hour <= 5) {
+    return "Good night " + fName;
+} else if (hour >= 6 && hour <= 11) {
+    return "Good morning " + fName;
+} else if (hour >= 12 && hour <= 17) {
+    return "Good day " + fName;
+} else {
+    return "Good evening " + name;
+}
 };
 
 /******************************************************************************
@@ -91,7 +108,12 @@ Example 2: ["One", "Two", "Three", "Four", "Five", "Six"] should return
 ******************************************************************************/
 
 export function arrayTrimmer() {
-  //your code here
+  try {
+    console.log(arrayTrimmer(["Red", "Green", "Blue", "Yellow"]));
+    console.log(arrayTrimmer("Not an array")); 
+} catch (error) {
+    console.error(error.message);
+}
 }
 
 /******************************************************************************
