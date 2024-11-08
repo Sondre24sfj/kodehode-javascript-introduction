@@ -15,7 +15,7 @@ Read the terminal output before and after to see the difference
 ******************************************************************************/
 
 export function start() {
-  //your code here
+  return true
 
 };
 
@@ -80,18 +80,17 @@ The function should return:
 ******************************************************************************/
 
 export const greeter = (fName, hour) => {
-  if (hour < 0 || hour > 23) {
-    return "Invalid time";
-} else if (hour >= 0 && hour <= 5) {
-    return "Good night " + fName;
-} else if (hour >= 6 && hour <= 11) {
-    return "Good morning " + fName;
-} else if (hour >= 12 && hour <= 17) {
-    return "Good day " + fName;
-} else {
-    return "Good evening " + name;
+  
+  let greeting;
+  
+  if (hour < 12) {
+greeting = 'Good moorning';
+  } else if (hour < 18){
+greeting = 'Good afternoon';
+  } else {
+    greeting = 'Good evening';
+  }
 }
-};
 
 /******************************************************************************
 4.
@@ -108,12 +107,9 @@ Example 2: ["One", "Two", "Three", "Four", "Five", "Six"] should return
 ******************************************************************************/
 
 export function arrayTrimmer() {
-  try {
-    console.log(arrayTrimmer(["Red", "Green", "Blue", "Yellow"]));
-    console.log(arrayTrimmer("Not an array")); 
-} catch (error) {
-    console.error(error.message);
-}
+  if (arr.lenght <= 2) {
+    return [];
+} return arr.slice(1, -1);
 }
 
 /******************************************************************************
@@ -190,8 +186,20 @@ Return "😎Primitive values only😎"
 
 ******************************************************************************/
 
-export function coolMaker() {
-  //your code here
+export function coolMaker(input) {}
+  if (input === null || input === undefined) {
+    return "😎Primitive values only😎";
+}
+
+switch (typeof input) {
+    case 'string':
+        return `😎${input}😎`;
+    case 'number':
+        return `😎${(input * 2).toString()}😎`;
+    case 'boolean':
+        return input ? "😎Yeah😎" : "😎Chill😎";
+    default:
+        return "😎Primitive values only😎";
 }
 
 /******************************************************************************
